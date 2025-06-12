@@ -73,7 +73,7 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Positional Embeddings and Sutton's Bitter Lesson</h1>
-							
+
 							<h2>Introduction</h2>
 							<p>Sutton's Bitter Lesson (<a href="https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf">Sutton, 2019</a>) argues that machine learning breakthroughs, like AlphaGo, BERT, and large-scale vision models, rely on general, computation-driven methods that prioritize learning from data over human-crafted priors. Large language models (LLMs) based on transformer architectures exemplify this trend, scaling effectively with data and compute. Yet, positional embeddings—a key transformer component—seem to challenge this philosophy. Most embedding schemes are fixed, not learned, and embed a human-designed prior that words closer in a sentence are more relevant than those farther apart. This blog explores this machine learning practice that appears to defy the Bitter Lesson. We also analyze patterns in learned absolute positional embeddings, which partially align with fixed, human-designed schemes but show intriguing variations, highlighting the complexity of positional encodings in LLMs and the need for further research.</p>
 
@@ -180,6 +180,13 @@
 
 							<p>Intriguingly, learnable embeddings' oscillations suggest partial convergence with fixed methods, but models like GPT-2 (all sizes) and OPT-350M show exaggerated oscillations, raising concerns about potential degenerative solutions or training artifacts. In contrast, models like Galactica-6.7B and larger OPT (and the smallest OPT) variants display more desirable decay with oscillations that adapt to training data and model scale. This flexibility, absent in RoPE's rigid structure, may better capture nuanced patterns but risks instability. Are these oscillations beneficial or artifacts? They are unlikely to capture hierarchical structure in text, as peaks and troughs do not align across model sizes and architectures, but the periodicity may help distinguish positions, especially at greater distances.</p>
 						</div>
+					
+						<div class="inner">
+							<div class="post-info">
+							<p><strong>Authors:</strong> Xiaoliang Luo and Bradley C. Love</p>
+							<p><strong>Date:</strong> June 12, 2025</p>
+							<p><strong>Note:</strong> Also posted on <a href="https://bradlove.org/blog/position-embd">https://bradlove.org/blog/position-embd</a></p>
+						</div>
 					</section>
 
 			</div>
@@ -187,8 +194,9 @@
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
+					
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; LXL. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
