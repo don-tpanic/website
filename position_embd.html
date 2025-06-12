@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Positional Embeddings and Sutton's Bitter Lesson - Hyperspace by HTML5 UP</title>
+		<title>Giving LLMs too much RoPE: A limit on Sutton’s Bitter Lesson</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -72,7 +72,7 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Positional Embeddings and Sutton's Bitter Lesson</h1>
+							<h1 class="major">Giving LLMs too much RoPE: A limit on Sutton’s Bitter Lesson</h1>
 
 							<h2>Introduction</h2>
 							<p>Sutton's Bitter Lesson (<a href="https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf">Sutton, 2019</a>) argues that machine learning breakthroughs, like AlphaGo, BERT, and large-scale vision models, rely on general, computation-driven methods that prioritize learning from data over human-crafted priors. Large language models (LLMs) based on transformer architectures exemplify this trend, scaling effectively with data and compute. Yet, positional embeddings—a key transformer component—seem to challenge this philosophy. Most embedding schemes are fixed, not learned, and embed a human-designed prior that words closer in a sentence are more relevant than those farther apart. This blog explores this machine learning practice that appears to defy the Bitter Lesson. We also analyze patterns in learned absolute positional embeddings, which partially align with fixed, human-designed schemes but show intriguing variations, highlighting the complexity of positional encodings in LLMs and the need for further research.</p>
