@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Towards Tractable and High-Resolution Agent Capability Forecasting: A Research Proposal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Figure styling */
+			.fig {
+				text-align: center;
+				margin: 2em 0 3em 0; /* Increased bottom margin for better spacing */
+			}
+			
+			.fig img {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+				height: auto;
+			}
+			
+			/* Image size controls */
+			.img-large { max-width: 100% !important; }
+			.img-medium { max-width: 70% !important; }
+			.img-small { max-width: 55% !important; }
+			.img-tiny { max-width: 30% !important; }
+			
+			/* Caption styling */
+			.fig figcaption {
+				text-align: center;
+				margin-top: 1em;
+				padding: 0 1em;
+			}
+			
+			.inner-caption {
+				text-align: center;
+				font-style: italic;
+				color: #666;
+				line-height: 1.4;
+			}
+			
+			/* Caption width controls */
+			.caption-full { max-width: 100%; margin: 0 auto; }
+			.caption-wide { max-width: 85%; margin: 0 auto; }
+			.caption-medium { max-width: 70%; margin: 0 auto; }
+			.caption-narrow { max-width: 55%; margin: 0 auto; }
+			
+			/* Approach box styling */
+			.approach-box {
+				background: #f8f9fa;
+				border-left: 4px solid #007acc;
+				padding: 1.5em;
+				margin: 1.5em 0;
+				border-radius: 0 4px 4px 0;
+			}
+			
+			.approach-box h4 {
+				margin-top: 0;
+				color: #007acc;
+			}
+			
+			/* Stage styling */
+			.stage {
+				background: #fff;
+				border: 1px solid #ddd;
+				padding: 1.2em;
+				margin: 1em 0;
+				border-radius: 4px;
+			}
+			
+			.stage h4 {
+				margin-top: 0;
+				color: #333;
+				border-bottom: 1px solid #eee;
+				padding-bottom: 0.5em;
+			}
+			
+			.milestones {
+				background: #f0f8ff;
+				padding: 1em;
+				border-radius: 4px;
+				margin-top: 1em;
+			}
+			
+			.milestones strong {
+				color: #2c5aa0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Research Proposals</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#" class="active">Research</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Towards Tractable and High-Resolution Agent Capability Forecasting: A Research Proposal</h1>
+
+							<h2>Abstract</h2>
+							<p>Current agent capability forecasting relies on proxy measures like standard benchmarks that inadequately capture the complexity of agentic behaviours in critical domains. We propose a dual-dimensional framework combining general capability variables (e.g., goal persistence, information reconciliation, tool usage accuracy) with domain-specific task progressions to enable more tractable and interpretable forecasting. We present three concrete approaches, with failure mode driven forecasting emerging as most promising due to its direct analysis of agent transcripts rather than proxy measures. Our proposed research plan outlines a systematic three-stage methodology for implementing this approach, offering a pathway toward more reliable capability predictions that can inform safety considerations and strategic planning for increasingly powerful AI agents.</p>
+
+							<h2>1 Introduction</h2>
+							<p>As AI agents become increasingly capable of performing complex, multi-step tasks across critical domains, the ability to predict their future capabilities has emerged as a fundamental challenge with significant implications for safety, governance, and strategic planning. Unlike traditional language model benchmarks that focus on static question-answering tasks, agent capabilities involve dynamic interactions with environments, tool usage, and long-horizon reasoning that present novel forecasting challenges.</p>
+
+							<p>Current approaches to capability forecasting largely rely on proxy measures such as standard benchmark performance or Elo ratings (Pimpale et al., 2025; Ruan et al., 2024), which may inadequately capture the complexity of agentic behaviours. The stakes of accurate forecasting are particularly high in domains where agent failures could have serious consequences—from software engineering to AI research and cyber security. Understanding not just when agents will reach certain performance thresholds, but how and why they improve, is crucial for developing appropriate safeguards and deployment strategies.</p>
+
+							<p>This document proposes a framework for tractable and high-resolution agent capability forecasting that moves beyond simple accuracy metrics to capture the underlying mechanisms of agent performance. We introduce a dual-dimensional approach combining general capability variables with domain-specific task progressions, and present three concrete forecasting methodologies grounded in actual agentic behaviours rather than proxy measures.</p>
+
+							<h2>2 Problem Framing and Target Variables</h2>
+							<p>To make agent capability forecasting tractable, we propose framing the challenge as predicting two complementary sets of variables that together capture when agents might cross critical capability thresholds. This dual-dimensional approach transforms the broad question of "agent capabilities" into concrete, measurable targets while maintaining relevance across critical domains.</p>
+
+							<h3>Target Variable Set 1: General Capability</h3>
+							<p>We define general capabilities required for agents to automate tasks with critical risks if performed incorrectly. These variables can be identified through two approaches: consulting domain experts for key capabilities, and analysing failure modes of existing agents across critical domains. Key variables can include goal persistence over extended sequences, information reconciliation when facing conflicting sources, tool usage accuracy, context adherence in long-horizon tasks, and knowledge grounding to avoid hallucinated solutions. These identifiable and quantifiable targets can be assessed by humans and automated by LLMs. As building blocks for achieving final goals, we can train predictive models on existing agent scores across these dimensions to forecast future improvements.</p>
+
+							<h3>Target Variable Set 2: Domain-Specific Task Ceilings</h3>
+							<p>Within each critical domain, we collaborate with experts to establish difficulty-ranked task progressions reflecting realistic capability thresholds and potential harm scenarios. For instance, for software engineering, progressions might span basic debugging to multi-script refactor; or we can quantify the amount of code change needed with respect to the involvement of this code in the number of modules in a code base; for AI R&D, from implementing data parallel training to ZeRO3. We elicit expert judgments to create difficulty spectrums and/or use expert time-to-complete as difficulty estimates and/or use number of hints agents needed to complete the task.</p>
+
+							<h3>Advantages</h3>
+							<p>This framing provides granular tracking beyond simple accuracy metrics, enabling us to understand which specific capability mechanisms drive performance improvements. The shared general dimensions leverage insights across domains for robust scaling law development, while domain-specific hierarchies capture specialised risks. Together, these targets enable timeline mapping from short-to-long term capability development and support automated assessment systems that can continuously monitor progress without constant human evaluation.</p>
+
+							<h2>3 Forecasting Agent Performance vs QA Benchmark Performance</h2>
+
+							<h3>3.1 Similarities</h3>
+							<p>Agent performance forecasting shares a core foundation with QA benchmark prediction in that both fundamentally rely on basic abilities. For example, Pimpale et al. (2025) and Ruan et al. (2024) demonstrates that agent abilities can be predicted by basic skills, suggesting similar underlying relationships.</p>
+
+							<h3>3.2 Key Differences and Challenges</h3>
+
+							<h4>Dynamic vs Static Problem Structure</h4>
+							<p>Unlike QA benchmarks, agent performance presents a dynamic rather than static forecasting problem. Agents operate through interactive processes with partially observed environments, potentially with other agents and including human input. This involves multi-turn interactions and long-context scenarios, fundamentally changing the prediction challenge.</p>
+
+							<h4>Information Processing Complexity</h4>
+							<p>Agent tasks involve handling mixed information sources, noisy input, and being misled by false information. Agents must navigate information contradictions, unlike the clean, well-defined nature of QA benchmarks.</p>
+
+							<h4>Capability Interaction Effects</h4>
+							<p>Agent performance is driven by many more fundamental abilities that interact with each other, creating boost or hindrance effects. For example, being too persistent can be bad for creativity. These capability interactions create non-linear relationships that don't exist in simpler QA tasks.</p>
+
+							<h4>Model Shift</h4>
+							<p>As models improve, fundamental abilities may not grow proportionally. For instance, more post-training on code might occur relative to other capabilities. This creates distribution shift problems when trying to predict agent performance, as the underlying capability mix changes over time.</p>
+
+							<h4>Forecasting Targets</h4>
+							<p>QA benchmarks typically have unique correct answers, making evaluation straightforward. In contrast, agent tasks involve long-horizon execution with multiple steps, tool calling, and self-correction processes. While final task success rates remain possible evaluation metrics, they provide limited insight into agent capabilities, particularly given that existing agents achieve relatively low overall success rates. The critical information lies in understanding which intermediate steps cause agent failures and which sub-tasks create bottlenecks.</p>
+
+							<h2>4 Potential Approaches</h2>
+							<p>Existing forecasting methods (e.g., Pimpale et al. 2025; Polo et al. 2025; Ruan et al. 2024) typically rely on standard benchmark abilities or Elo ratings as proxies, assuming general basic capabilities correlate with agentic performance. While these approaches balance cost and prediction accuracy, we propose methods more directly grounded in agentic behaviours within actual task environments.</p>
+
+							<h3>4.1 Approach 1: Failure Mode Driven Forecasting</h3>
+							<p>Rather than using standard benchmarks as proxies, this approach grounds forecasts in actual agentic behaviours by analysing agent task transcripts to identify failure modes through expert input, automated LLM judgment, or both. We construct predictive models that forecast individual or weighted average scores across the general capabilities identified in Section 2 (goal persistence, information reconciliation, tool usage accuracy, context adherence, etc.) over time.</p>
+
+							<p>We require identification and collection of agent failure modes across a range of agentic tasks. The percentage of failure rate per target variable can be obtained across total number of tasks or sub-tasks (Approach 3). We can follow established one-step approaches (Pimpale et al., 2025) across frontier model classes over release dates.</p>
+
+							<p>One way to aggregate the predictions over dimensions is to follow Ruan et al. (2024) but performing PCA using the identified target variables as features. This way, we obtain importance of each variable at explaining variance across models which we can use as weighting factors.</p>
+
+							<p><strong>Advantages and Limitations:</strong> This approach provides finer-resolution insights beyond accuracy-driven predictions, revealing whether improvements stem from reduced API hallucinations or increased goal persistence. Unlike Ruan et al. (2024), it avoids issues with benchmark saturation, and unlike Pimpale et al. (2025), it works directly with agentic workflow transcripts rather than relying on predominantly single-turn, static questions (Zheng et al., 2023). However, automating the identification and scoring of target variables remains challenging, particularly controlling for appropriate granularity. Additionally, current agents perform poorly across most identified dimensions, potentially limiting predictive power for future capabilities.</p>
+
+							<h3>4.2 Approach 2: Expert-Ranked Task Forecasting</h3>
+							<p>Building on the domain-specific task ceilings from Section 2, we collaborate with domain experts to establish difficulty-ranked task progressions. Experts provide difficulty rankings across benchmark tasks (e.g., SWE-bench problems), enabling predictive models based on current agent pass rates to forecast which difficulty levels agents will likely solve within specific timeframes.</p>
+
+							<p>We require collection of expert inputs and results of current frontier models pass rates over the spectrum of tasks. We can then follow Pimpale et al. (2025) predicting hardest task level agents can pass over time.</p>
+
+							<p><strong>Advantages and Limitations:</strong> This approach provides interpretable progress markers grounded in expert judgment. Rather than reporting abstract percentages ("80% of SWE-bench by 2030"), we can offer concrete capability statements ("models can solve level n SWE problems involving logical bugs across 10 inter-related modules"). This framework offers advantages over time-based difficulty measures (Kwa et al., 2025), as completion time may not fully reflect task difficulty and provides less interpretable progress indicators. The primary limitation involves the substantial investment required for expert elicitation and potential disagreement on difficulty spectrums. In addition, expert-perceived difficulty may not translate directly to agent-perceived difficulty, though insights from Approach 1's failure modes could guide expert assessments.</p>
+
+							<h3>4.3 Approach 3: Process-Aware Forecasting</h3>
+							<p>Instead of forecasting binary task completion, this approach predicts how many subtasks or checkpoints agents can complete as models evolve. Leveraging existing benchmark annotations (e.g., AgentCompany (Xu et al., 2025); Cybench (Zhang et al., 2025)), we build predictive models forecasting subtask completion percentages over time.</p>
+
+							<p>We require collection of all intermediate step agent performances in order to compute an overall pass rate percentage of sub-tasks for each frontier model over release dates.</p>
+
+							<p><strong>Advantages and Limitations:</strong> This approach captures agent progress more granularly than binary task completion, providing concrete intermediate progress markers. However, agents may not execute according to predefined checkpoints, and checkpoint progression may be non-linear. If difficulty scaling between consecutive checkpoints varies significantly, predictions may become inaccurate about timeline requirements for crossing specific capability thresholds.</p>
+
+							<h2>5 Research Plan for Approach 1</h2>
+							<p>Approach 1 offers the most promising path forward as it directly grounds predictions in agentic environments rather than relying on proxy measures. This approach provides several key advantages: high-resolution insights into agent progress across specific dimensions, meaningful predictions that can inform model post-training, and substantial automation potential that reduces human costs and project timelines. Additionally, Approach 1 can be integrated with existing forecasting methods and combined with Approaches 2 and 3 when additional granularity is required and resources permit.</p>
+
+							<h3>5.1 Structure</h3>
+
+							<h4>Stage 1: Foundation and Initial Pipeline Development</h4>
+							<p>Recruit domain specialists to serve as data annotators alongside researchers and engineers who will collaborate throughout the project. Early-stage researchers may also function as annotators. All team members participate in project scoping, mission alignment and risk mitigation framework.</p>
+
+							<p>Develop a failure mode identification pipeline for agentic benchmarks using human annotations to create a comprehensive variable pool. Conduct an initial data analysis to characterise the distribution of failure modes and identify any patterns or domain-specific or stage-specific signatures. These insights will guide the refinement of both target variable selection and overall pipeline design.</p>
+
+							<p>For this stage, it might make sense to conduct pilot studies focusing on one or two agentic benchmarks first. One could also try to build partnership with creators of the benchmarks to inform experiment designs.</p>
+
+							<p><strong>Milestones:</strong></p>
+							<ol>
+								<li>Established team and responsibilities along with partnerships with third parties such as benchmark creators and model providers</li>
+								<li>Provisional target variables with clear definitions and concrete examples</li>
+								<li>First working automation pipeline for annotating small-scale agentic transcripts</li>
+								<li>Initial data analysis report</li>
+							</ol>
+
+							<h4>Stage 2: Scaling and Predictive Modelling</h4>
+							<p>Expand to additional agentic benchmarks and conduct large-scale elicitation and scaled annotations using refined target variables across more agentic settings. Track outliers—variables unique to specific benchmark subsets. Develop predictive functions to analyse agentic performance through various failure modes and their temporal evolution. Review project direction against emerging literature and adjust directions if necessary.</p>
+
+							<p><strong>Milestones:</strong></p>
+							<ol>
+								<li>Scaled training dataset with improved annotation pipeline</li>
+								<li>Initial prediction models with analysed results</li>
+								<li>Comprehensive project review with team feedback and improvement plans</li>
+							</ol>
+
+							<h4>Stage 3: Validation and Formalisation</h4>
+							<p>Formalise results through statistical testing and comparisons with existing approaches. Move beyond backtesting by validating preregistered predictions against newly released models. Explore combined approaches to inform experimental design. Prepare technical documentation, code release, project debrief, and future work planning.</p>
+
+							<h3>5.2 Resources and Data</h3>
+							<p>Budget includes financial compensation for the recruited team. Compute resources will be needed, including API credits for frontier models and local compute for prototyping with open-source models. Data storage is required for annotations and artifacts. For data collection, agent transcripts from benchmarks (e.g., SWE-bench, RE-bench, Cybench) will be gathered, with both human annotators and LLMs used to identify and categorize failure modes.</p>
+
+							<h3>5.3 Testing Methods</h3>
+
+							<h4>Verification of Automated Data Annotation</h4>
+							<p>A random subsample of annotated agent transcripts will be independently verified by human annotators to assess the accuracy of automated failure mode identification. Inter-annotator agreement metrics will be calculated to ensure data quality and reliability of the annotation pipeline.</p>
+
+							<h4>Backtesting with Expanding Window Cross-Validation</h4>
+							<p>Predictive models will be trained using expanding window cross-validation to measure prediction fidelity across target variables (Pimpale et al., 2025). This approach simulates real-world forecasting conditions by progressively incorporating new model releases while testing predictions on held-out future data.</p>
+
+							<h4>Testing Against Preregistered Predictions</h4>
+							<p>Models will be fitted on all available historical data to generate predictions for target variables on newly released frontier models. These predictions will be preregistered before model releases to prevent post-hoc adjustment and ensure rigorous evaluation of forecasting accuracy.</p>
+
+							<h4>Validating Relationship and Advantage Over Existing Approaches</h4>
+							<p>A controlled experiment will apply PCA to our identified failure mode scores and compare predictive performance against existing capability-based approaches. This comparison will determine whether failure mode features more faithfully reflect agentic performance than basic capability proxies. Additionally, combining both feature sets may yield higher-dimensional principal components that further improve predictive accuracy.</p>
+
+							<h2>6 Conclusion</h2>
+							<p>This proposal introduces a dual-dimensional framework for agent capability forecasting that moves beyond proxy measures to analyse actual agentic behaviours. We present three concrete approaches, with failure mode driven forecasting (Approach 1) offering the most promising path due to its direct grounding in agent transcripts and high-resolution insights. The detailed three-stage research plan provides a systematic methodology for implementing this approach, addressing current limitations while maintaining practical feasibility. This framework offers a pathway toward more reliable capability predictions that can inform safety considerations and strategic planning as AI agents become increasingly deployed in critical domains.</p>
+
+							<h2>References</h2>
+							<p id="ref-kwa">Kwa T, West B, Becker J, Deng A, Garcia K, Hasin M, Jawhar S, Kinniment M, Rush N, Arx SV, Bloom R, Broadley T, Du H, Goodrich B, Jurkovic N, Miles LH, Nix S, Lin T, Parikh N, Rein D, Sato LJK, Wijk H, Ziegler DM, Barnes E, Chan L (2025) Measuring AI Ability to Complete Long Tasks. DOI 10.48550/arXiv.2503.14499, URL <a href="http://arxiv.org/abs/2503.14499">http://arxiv.org/abs/2503.14499</a>, arXiv:2503.14499 [cs]</p>
+
+							<p id="ref-pimpale">Pimpale G, Scheurer J, Højmark A, Hobbhahn M (2025) Forecasting Frontier Language Model Agent Capabilities. Apolo Research</p>
+
+							<p id="ref-polo">Polo FM, Somerstep S, Choshen L, Sun Y, Yurochkin M (2025) Sloth: scaling laws for LLM skills to predict multi-benchmark performance across families. DOI 10.48550/arXiv.2412.06540, URL <a href="http://arxiv.org/abs/2412.06540">http://arxiv.org/abs/2412.06540</a>, arXiv:2412.06540 [cs]</p>
+
+							<p id="ref-ruan">Ruan Y, Maddison CJ, Hashimoto T (2024) Observational Scaling Laws and the Predictability of Language Model Performance. DOI 10.48550/arXiv.2405.10938, URL <a href="http://arxiv.org/abs/2405.10938">http://arxiv.org/abs/2405.10938</a>, arXiv:2405.10938 [cs]</p>
+
+							<p id="ref-xu">Xu FF, Song Y, Li B, Tang Y, Jain K, Bao M, Wang ZZ, Zhou X, Guo Z, Cao M, Yang M, Lu HY, Martin A, Su Z, Maben L, Mehta R, Chi W, Jang L, Xie Y, Zhou S, Neubig G (2025) TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks. DOI 10.48550/arXiv.2412.14161, URL <a href="http://arxiv.org/abs/2412.14161">http://arxiv.org/abs/2412.14161</a>, arXiv:2412.14161 [cs]</p>
+
+							<p id="ref-zhang">Zhang AK, Perry N, Dulepet R, Ji J, Menders C, Lin JW, Jones E, Hussein G, Liu S, Jasper D, Peetathawatchai P, Glenn A, Sivashankar V, Zamoshchin D, Glikbarg L, Askaryar D, Yang M, Zhang T, Alluri R, Tran N, Sangpisit R, Yiorkadjis P, Osele K, Raghupathi G, Boneh D, Ho DE, Liang P (2025) Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models. DOI 10.48550/arXiv.2408.08926, URL <a href="http://arxiv.org/abs/2408.08926">http://arxiv.org/abs/2408.08926</a>, arXiv:2408.08926 [cs]</p>
+
+							<p id="ref-zheng">Zheng L, Chiang WL, Sheng Y, Zhuang S, Wu Z, Zhuang Y, Lin Z, Li Z, Li D, Xing EP, Zhang H, Gonzalez JE, Stoica I (2023) Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. URL <a href="http://arxiv.org/abs/2306.05685">http://arxiv.org/abs/2306.05685</a>, arXiv:2306.05685 [cs]</p>
+						</div>
+
+						<div class="inner">
+							<div class="post-info">
+								<p><strong>Author:</strong> Xiaoliang Luo</p>
+								<p><strong>Date:</strong> July 2025</p>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Research Proposals. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
